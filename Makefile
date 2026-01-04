@@ -1,9 +1,15 @@
 # OS-EL Deadlock Detection & Recovery Module
 # Makefile for Windows (MinGW) and Linux/macOS
 
+# Detect OS and set shell
+ifeq ($(OS),Windows_NT)
+    SHELL := cmd.exe
+    .SHELLFLAGS := /c
+endif
+
 # Compiler settings
 CC = gcc
-CFLAGS = -Wall -Wextra -std=c99 -I.
+CFLAGS = -Wall -Wextra -std=c99 -Iinclude
 LDFLAGS =
 
 # Debug/Release mode
@@ -42,8 +48,8 @@ TEST_TARGET = $(BIN_DIR)/test_deadlock
 
 # Detect OS
 ifeq ($(OS),Windows_NT)
-    TARGET := $(TARGET).exe
-    TEST_TARGET := $(TEST_TARGET).exe
+    TARGET := $(subst /,\,$(TARGET).exe)
+    TEST_TARGET := $(subst /,\,$(TEST_TARGET).exe)
     RM = del /Q /F
     RMDIR = rmdir /S /Q
     SEP = \\
@@ -70,15 +76,15 @@ dirs:
 endif
 
 # Compile source files
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(INC_DIR)/%.h
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(INC_DIR)/*.h | dirs
 	$(CC) $(CFLAGS) -c $< -o $@
 
 # Compile main
-$(MAIN_OBJ): $(MAIN_SRC) $(INC_DIR)/*.h
+$(MAIN_OBJ): $(MAIN_SRC) $(INC_DIR)/*.h | dirs
 	$(CC) $(CFLAGS) -c $< -o $@
 
 # Link main executable
-$(TARGET): $(OBJECTS) $(MAIN_OBJ)
+$(TARGET): $(OBJECTS) $(MAIN_OBJ) | dirs
 	$(CC) $(OBJECTS) $(MAIN_OBJ) $(LDFLAGS) -o $@
 	@echo Build complete: $(TARGET)
 
@@ -88,10 +94,10 @@ test: dirs $(TEST_TARGET)
 	@echo Running tests...
 	@$(TEST_TARGET)
 
-$(TEST_OBJ): $(TEST_SRC) $(INC_DIR)/*.h
+$(TEST_OBJ): $(TEST_SRC) $(INC_DIR)/*.h | dirs
 	$(CC) $(CFLAGS) -c $< -o $@
 
-$(TEST_TARGET): $(OBJECTS) $(TEST_OBJ)
+$(TEST_TARGET): $(OBJECTS) $(TEST_OBJ) | dirs
 	$(CC) $(OBJECTS) $(TEST_OBJ) $(LDFLAGS) -o $@
 
 # Debug build
@@ -101,14 +107,16 @@ debug: all
 
 # Clean build artifacts
 .PHONY: clean
-clean:
 ifeq ($(OS),Windows_NT)
+clean:
 	@if exist "$(OBJ_DIR)" $(RMDIR) "$(OBJ_DIR)"
 	@if exist "$(BIN_DIR)" $(RMDIR) "$(BIN_DIR)"
-else
-	@$(RMDIR) $(OBJ_DIR) $(BIN_DIR)
-endif
 	@echo Clean complete
+else
+clean:
+	@$(RMDIR) $(OBJ_DIR) $(BIN_DIR)
+	@echo Clean complete
+endif
 
 # Rebuild from scratch
 .PHONY: rebuild

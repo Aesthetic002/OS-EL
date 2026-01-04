@@ -55,11 +55,15 @@ typedef struct {
 
 /**
  * @brief Detection algorithm type
+ *
+ * Note: DETECT_BANKER is deprecated and no longer supported. It is kept
+ * here only for source compatibility with older code that may still
+ * reference this value.
  */
 typedef enum {
-    DETECT_DFS,             /**< Standard DFS-based detection */
-    DETECT_DFS_ALL_CYCLES,  /**< Find all cycles (slower) */
-    DETECT_BANKER           /**< Banker's algorithm style */
+    DETECT_DFS,              /**< Standard DFS-based detection */
+    DETECT_DFS_ALL_CYCLES,   /**< Find all cycles (slower) */
+    DETECT_BANKER            /**< Deprecated: no longer supported */
 } DetectionAlgorithm;
 
 /* ============================================================================

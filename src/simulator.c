@@ -14,33 +14,39 @@
  * ============================================================================ */
 
 static const char* scenario_names[] = {
-    "Simple Deadlock",
-    "Circular Wait",
-    "Dining Philosophers",
-    "Producer-Consumer",
-    "Reader-Writer",
-    "Banker's Safe State",
-    "Banker's Unsafe State",
-    "No Deadlock",
-    "Multiple Cycles",
-    "Complex Dependency",
-    "Random",
-    "Custom"
+    [SCENARIO_SIMPLE_DEADLOCK]     = "Simple Deadlock",
+    [SCENARIO_CIRCULAR_WAIT]       = "Circular Wait",
+    [SCENARIO_DINING_PHILOSOPHERS] = "Dining Philosophers",
+    [SCENARIO_PRODUCER_CONSUMER]   = "Producer-Consumer",
+    [SCENARIO_READER_WRITER]       = "Reader-Writer",
+    [SCENARIO_NO_DEADLOCK]         = "No Deadlock",
+    [SCENARIO_MULTIPLE_CYCLES]     = "Multiple Cycles",
+    [SCENARIO_COMPLEX_DEPENDENCY]  = "Complex Dependency",
+    [SCENARIO_RANDOM]              = "Random",
+    [SCENARIO_CUSTOM]              = "Custom"
 };
 
 static const char* scenario_descriptions[] = {
-    "Two processes each holding one resource and requesting the other",
-    "N processes in circular wait chain (P1->R1->P2->R2->...->Pn->Rn->P1)",
-    "Classic dining philosophers problem with N philosophers and N forks",
-    "Producer and consumer processes sharing buffer resources",
-    "Multiple readers and writers competing for shared resources",
-    "A state where deadlock is possible but not present",
-    "A state where deadlock is unavoidable",
-    "A scenario that demonstrates no deadlock occurring",
+    [SCENARIO_SIMPLE_DEADLOCK] =
+        "Two processes each holding one resource and requesting the other",
+    [SCENARIO_CIRCULAR_WAIT] =
+        "N processes in circular wait chain (P1->R1->P2->R2->...->Pn->Rn->P1)",
+    [SCENARIO_DINING_PHILOSOPHERS] =
     "Multiple independent cycles in the resource allocation graph",
     "Complex dependencies between processes and resources",
-    "Randomly generated scenario",
-    "User-defined custom scenario"
+    "A scenario that demonstrates no deadlock occurring",
+    [SCENARIO_READER_WRITER] =
+        "Multiple readers and writers competing for shared resources",
+    [SCENARIO_NO_DEADLOCK] =
+        "A scenario that demonstrates no deadlock occurring",
+    [SCENARIO_MULTIPLE_CYCLES] =
+        "Multiple independent cycles in the resource allocation graph",
+    [SCENARIO_COMPLEX_DEPENDENCY] =
+        "Complex dependencies between processes and resources",
+    [SCENARIO_RANDOM] =
+        "Randomly generated scenario",
+    [SCENARIO_CUSTOM] =
+        "User-defined custom scenario"
 };
 
 static const char* event_type_names[] = {

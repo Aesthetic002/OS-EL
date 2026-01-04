@@ -27,8 +27,8 @@ typedef enum {
     SCENARIO_DINING_PHILOSOPHERS,   /**< Dining philosophers problem */
     SCENARIO_PRODUCER_CONSUMER,     /**< Producer-consumer with shared buffers */
     SCENARIO_READER_WRITER,         /**< Reader-writer problem */
-    SCENARIO_BANKER_SAFE,           /**< Banker's algorithm - safe state */
-    SCENARIO_BANKER_UNSAFE,         /**< Banker's algorithm - unsafe state */
+    SCENARIO_BANKER_SAFE,           /**< Banker's algorithm (safe state) - retained for compatibility */
+    SCENARIO_BANKER_UNSAFE,         /**< Banker's algorithm (unsafe state) - retained for compatibility */
     SCENARIO_NO_DEADLOCK,           /**< Scenario without deadlock */
     SCENARIO_MULTIPLE_CYCLES,       /**< Multiple independent cycles */
     SCENARIO_COMPLEX_DEPENDENCY,    /**< Complex resource dependencies */
