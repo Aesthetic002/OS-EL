@@ -40,8 +40,42 @@ Compile:
 mingw32-make
 ```
 
-Run:
+Run CLI:
 ```powershell
 .\bin\deadlock.exe
 ```
+
+Run GUI:
+```powershell
+python gui\gui.py
+```
+
+## GUI Features
+
+The project includes a comprehensive Tkinter-based GUI with:
+
+- **Visual RAG Display**: Interactive graph visualization with multiple layout algorithms
+- **Process/Resource Management**: Easy-to-use controls for managing system entities
+- **Deadlock Detection**: Real-time detection with visual highlighting
+- **Recovery Strategies**: Multiple configurable recovery options
+- **Simulation Scenarios**: Pre-built scenarios including Simple Deadlock, Dining Philosophers, etc.
+- **Event Logging**: Track simulation progress and system events
+
+See [gui/README.md](gui/README.md) for detailed GUI documentation.
+
+## Quick Start
+
+1. Build the backend:
+   ```powershell
+   mingw32-make
+   ```
+
+2. Run the GUI:
+   ```powershell
+   python gui\gui.py
+   ```
+
+3. Try the "Simple Deadlock" scenario from the Simulation panel
+4. Click "Detect Deadlock" to see the detection in action
+5. Experiment with different recovery strategies
 

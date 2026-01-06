@@ -286,10 +286,11 @@ int api_rag_to_json(const RAG *rag, char *buffer, size_t buffer_size) {
     if (!rag || !buffer || buffer_size == 0) return 0;
     
     int written = 0;
-    written += snprintf(buffer + written, buffer_size - written, "{\n");
+    /* Output compact single-line JSON for Python GUI compatibility */
+    written += snprintf(buffer + written, buffer_size - written, "{");
     
     /* Processes */
-    written += snprintf(buffer + written, buffer_size - written, "  \"processes\": [");
+    written += snprintf(buffer + written, buffer_size - written, "\"processes\": [");
     bool first = true;
     for (int i = 0; i < MAX_PROCESSES && written < (int)buffer_size - 100; i++) {
         if (rag->processes[i].active) {
@@ -298,10 +299,10 @@ int api_rag_to_json(const RAG *rag, char *buffer, size_t buffer_size) {
             first = false;
         }
     }
-    written += snprintf(buffer + written, buffer_size - written, "],\n");
+    written += snprintf(buffer + written, buffer_size - written, "], ");
     
     /* Resources */
-    written += snprintf(buffer + written, buffer_size - written, "  \"resources\": [");
+    written += snprintf(buffer + written, buffer_size - written, "\"resources\": [");
     first = true;
     for (int i = 0; i < MAX_RESOURCES && written < (int)buffer_size - 100; i++) {
         if (rag->resources[i].active) {
@@ -310,10 +311,10 @@ int api_rag_to_json(const RAG *rag, char *buffer, size_t buffer_size) {
             first = false;
         }
     }
-    written += snprintf(buffer + written, buffer_size - written, "],\n");
+    written += snprintf(buffer + written, buffer_size - written, "], ");
     
     /* Request edges */
-    written += snprintf(buffer + written, buffer_size - written, "  \"requests\": [");
+    written += snprintf(buffer + written, buffer_size - written, "\"requests\": [");
     first = true;
     for (int p = 0; p < MAX_PROCESSES && written < (int)buffer_size - 50; p++) {
         for (int r = 0; r < MAX_RESOURCES; r++) {
@@ -325,10 +326,10 @@ int api_rag_to_json(const RAG *rag, char *buffer, size_t buffer_size) {
             }
         }
     }
-    written += snprintf(buffer + written, buffer_size - written, "],\n");
+    written += snprintf(buffer + written, buffer_size - written, "], ");
     
     /* Assignment edges */
-    written += snprintf(buffer + written, buffer_size - written, "  \"assignments\": [");
+    written += snprintf(buffer + written, buffer_size - written, "\"assignments\": [");
     first = true;
     for (int p = 0; p < MAX_PROCESSES && written < (int)buffer_size - 50; p++) {
         for (int r = 0; r < MAX_RESOURCES; r++) {
@@ -341,7 +342,7 @@ int api_rag_to_json(const RAG *rag, char *buffer, size_t buffer_size) {
             }
         }
     }
-    written += snprintf(buffer + written, buffer_size - written, "]\n");
+    written += snprintf(buffer + written, buffer_size - written, "]");
     
     written += snprintf(buffer + written, buffer_size - written, "}");
     
@@ -354,29 +355,30 @@ int api_deadlock_result_to_json(const RAG *rag, const DeadlockResult *result,
     (void)rag; /* May use later for names */
     
     int written = 0;
-    written += snprintf(buffer + written, buffer_size - written, "{\n");
+    /* Output compact single-line JSON for Python GUI compatibility */
+    written += snprintf(buffer + written, buffer_size - written, "{");
     written += snprintf(buffer + written, buffer_size - written,
-        "  \"deadlock_detected\": %s,\n", result->deadlock_detected ? "true" : "false");
+        "\"deadlock_detected\": %s, ", result->deadlock_detected ? "true" : "false");
     written += snprintf(buffer + written, buffer_size - written,
-        "  \"cycle_count\": %d,\n", result->cycle_count);
+        "\"cycle_count\": %d, ", result->cycle_count);
     
     /* Deadlocked processes */
-    written += snprintf(buffer + written, buffer_size - written, "  \"deadlocked_processes\": [");
+    written += snprintf(buffer + written, buffer_size - written, "\"deadlocked_processes\": [");
     for (int i = 0; i < result->deadlocked_process_count; i++) {
         if (i > 0) written += snprintf(buffer + written, buffer_size - written, ", ");
         written += snprintf(buffer + written, buffer_size - written, "%d", 
                             result->deadlocked_processes[i]);
     }
-    written += snprintf(buffer + written, buffer_size - written, "],\n");
+    written += snprintf(buffer + written, buffer_size - written, "], ");
     
     /* Deadlocked resources */
-    written += snprintf(buffer + written, buffer_size - written, "  \"deadlocked_resources\": [");
+    written += snprintf(buffer + written, buffer_size - written, "\"deadlocked_resources\": [");
     for (int i = 0; i < result->deadlocked_resource_count; i++) {
         if (i > 0) written += snprintf(buffer + written, buffer_size - written, ", ");
         written += snprintf(buffer + written, buffer_size - written, "%d", 
                             result->deadlocked_resources[i]);
     }
-    written += snprintf(buffer + written, buffer_size - written, "]\n");
+    written += snprintf(buffer + written, buffer_size - written, "]");
     
     written += snprintf(buffer + written, buffer_size - written, "}");
     
@@ -387,17 +389,18 @@ int api_recovery_result_to_json(const RecoveryResult *result, char *buffer, size
     if (!result || !buffer || buffer_size == 0) return 0;
     
     int written = 0;
-    written += snprintf(buffer + written, buffer_size - written, "{\n");
+    /* Output compact single-line JSON for Python GUI compatibility */
+    written += snprintf(buffer + written, buffer_size - written, "{");
     written += snprintf(buffer + written, buffer_size - written,
-        "  \"success\": %s,\n", result->success ? "true" : "false");
+        "\"success\": %s, ", result->success ? "true" : "false");
     written += snprintf(buffer + written, buffer_size - written,
-        "  \"processes_terminated\": %d,\n", result->processes_terminated);
+        "\"processes_terminated\": %d, ", result->processes_terminated);
     written += snprintf(buffer + written, buffer_size - written,
-        "  \"resources_preempted\": %d,\n", result->resources_preempted);
+        "\"resources_preempted\": %d, ", result->resources_preempted);
     written += snprintf(buffer + written, buffer_size - written,
-        "  \"iterations\": %d,\n", result->iterations);
+        "\"iterations\": %d, ", result->iterations);
     written += snprintf(buffer + written, buffer_size - written,
-        "  \"summary\": \"%s\"\n", result->summary);
+        "\"summary\": \"%s\"", result->summary);
     written += snprintf(buffer + written, buffer_size - written, "}");
     
     return written;
@@ -407,23 +410,24 @@ int api_simulation_state_to_json(const SimulationState *state, char *buffer, siz
     if (!state || !buffer || buffer_size == 0) return 0;
     
     int written = 0;
-    written += snprintf(buffer + written, buffer_size - written, "{\n");
+    /* Output compact single-line JSON for Python GUI compatibility */
+    written += snprintf(buffer + written, buffer_size - written, "{");
     written += snprintf(buffer + written, buffer_size - written,
-        "  \"scenario\": \"%s\",\n", simulation_scenario_name(state->scenario));
+        "\"scenario\": \"%s\", ", simulation_scenario_name(state->scenario));
     written += snprintf(buffer + written, buffer_size - written,
-        "  \"current_tick\": %d,\n", state->current_tick);
+        "\"current_tick\": %d, ", state->current_tick);
     written += snprintf(buffer + written, buffer_size - written,
-        "  \"running\": %s,\n", state->running ? "true" : "false");
+        "\"running\": %s, ", state->running ? "true" : "false");
     written += snprintf(buffer + written, buffer_size - written,
-        "  \"paused\": %s,\n", state->paused ? "true" : "false");
+        "\"paused\": %s, ", state->paused ? "true" : "false");
     written += snprintf(buffer + written, buffer_size - written,
-        "  \"deadlock_occurred\": %s,\n", state->deadlock_occurred ? "true" : "false");
+        "\"deadlock_occurred\": %s, ", state->deadlock_occurred ? "true" : "false");
     written += snprintf(buffer + written, buffer_size - written,
-        "  \"event_count\": %d,\n", state->event_count);
+        "\"event_count\": %d, ", state->event_count);
     written += snprintf(buffer + written, buffer_size - written,
-        "  \"process_count\": %d,\n", state->rag.process_count);
+        "\"process_count\": %d, ", state->rag.process_count);
     written += snprintf(buffer + written, buffer_size - written,
-        "  \"resource_count\": %d\n", state->rag.resource_count);
+        "\"resource_count\": %d", state->rag.resource_count);
     written += snprintf(buffer + written, buffer_size - written, "}");
     
     return written;
@@ -436,7 +440,8 @@ int api_wait_for_graph_to_json(int wait_for_matrix[MAX_PROCESSES][MAX_PROCESSES]
     (void)rag; /* May use for names */
     
     int written = 0;
-    written += snprintf(buffer + written, buffer_size - written, "{\n  \"edges\": [");
+    /* Output compact single-line JSON for Python GUI compatibility */
+    written += snprintf(buffer + written, buffer_size - written, "{\"edges\": [");
     
     bool first = true;
     for (int i = 0; i < process_count && written < (int)buffer_size - 50; i++) {
@@ -450,7 +455,7 @@ int api_wait_for_graph_to_json(int wait_for_matrix[MAX_PROCESSES][MAX_PROCESSES]
         }
     }
     
-    written += snprintf(buffer + written, buffer_size - written, "]\n}");
+    written += snprintf(buffer + written, buffer_size - written, "]}");
     return written;
 }
 
@@ -855,18 +860,19 @@ int api_serialize_response(const APIResponse *response, char *buffer, size_t buf
     if (!response || !buffer || buffer_size == 0) return 0;
     
     int written = 0;
-    written += snprintf(buffer + written, buffer_size - written, "{\n");
+    /* Output compact single-line JSON for Python GUI compatibility */
+    written += snprintf(buffer + written, buffer_size - written, "{");
     written += snprintf(buffer + written, buffer_size - written,
-        "  \"status\": \"%s\",\n", api_status_name(response->status));
+        "\"status\": \"%s\", ", api_status_name(response->status));
     written += snprintf(buffer + written, buffer_size - written,
-        "  \"message\": \"%s\"", response->message);
+        "\"message\": \"%s\"", response->message);
     
     if (response->data_length > 0) {
         written += snprintf(buffer + written, buffer_size - written,
-            ",\n  \"data\": %s", response->data);
+            ", \"data\": %s", response->data);
     }
     
-    written += snprintf(buffer + written, buffer_size - written, "\n}");
+    written += snprintf(buffer + written, buffer_size - written, "}");
     
     return written;
 }
