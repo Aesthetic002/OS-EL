@@ -167,6 +167,32 @@ class SimulationPanel(ttk.Frame):
                              command=lambda: self.log_text.delete('1.0', tk.END))
         clear_btn.pack(pady=5)
         apply_button_style(clear_btn, 'secondary')
+        
+        # Auto-run controls
+        autorun_frame = tk.LabelFrame(self, text="Auto-Run Simulation",
+                                     bg=COLORS['bg_primary'],
+                                     font=FONTS['header'], padx=10, pady=10)
+        autorun_frame.pack(fill='x', padx=10, pady=5)
+        
+        speed_frame = tk.Frame(autorun_frame, bg=COLORS['bg_primary'])
+        speed_frame.pack(fill='x', pady=5)
+        
+        tk.Label(speed_frame, text="Speed (ms/tick):", bg=COLORS['bg_primary'],
+                font=FONTS['body']).pack(side='left', padx=5)
+        self.speed_entry = tk.Entry(speed_frame, font=FONTS['body'], width=8)
+        self.speed_entry.insert(0, "500")
+        self.speed_entry.pack(side='left', padx=5)
+        
+        autorun_btn_frame = tk.Frame(autorun_frame, bg=COLORS['bg_primary'])
+        autorun_btn_frame.pack(fill='x', pady=5)
+        
+        self.autorun_btn = tk.Button(autorun_btn_frame, text="▶ Auto-Run",
+                                    command=self._toggle_autorun)
+        self.autorun_btn.pack(side='left', padx=5)
+        apply_button_style(self.autorun_btn, 'primary')
+        
+        self.autorun_active = False
+        self.autorun_job = None
     
     def _load_scenario(self, scenario_id):
         """Load a simulation scenario"""
@@ -286,3 +312,76 @@ class SimulationPanel(ttk.Frame):
         """Add message to event log"""
         self.log_text.insert(tk.END, message + "\n")
         self.log_text.see(tk.END)
+    
+    def _toggle_autorun(self):
+        """Toggle auto-run mode"""
+        if self.autorun_active:
+            # Stop auto-run
+            self.autorun_active = False
+            if self.autorun_job:
+                self.after_cancel(self.autorun_job)
+                self.autorun_job = None
+            self.autorun_btn.config(text="▶ Auto-Run")
+            self._log("⏹ Auto-run stopped")
+        else:
+            # Start auto-run
+            self.autorun_active = True
+            self.autorun_btn.config(text="⏹ Stop Auto-Run")
+            self._log("▶ Auto-run started")
+            self._auto_step()
+    
+    def _auto_step(self):
+        """Execute one auto-step and schedule the next"""
+        if not self.autorun_active:
+            return
+        
+        try:
+            auto_detect = self.auto_detect_var.get()
+            auto_recover = self.auto_recover_var.get()
+            
+            response = self.backend.sim_tick(auto_detect, auto_recover)
+            if response and response.get('status') == 'success':
+                data = response.get('data', {})
+                if isinstance(data, str):
+                    data = json.loads(data)
+                
+                tick = data.get('current_tick', 0)
+                running = data.get('running', False)
+                deadlock = data.get('deadlock_occurred', False)
+                
+                status = "running" if running else "ended"
+                deadlock_str = " [DEADLOCK!]" if deadlock else ""
+                
+                self._log(f"⏭ Tick {tick}: {status}{deadlock_str}")
+                
+                # Update visualization
+                if self.on_update:
+                    self.on_update()
+                
+                if not running or deadlock:
+                    # Simulation ended or deadlock occurred
+                    self.autorun_active = False
+                    self.autorun_btn.config(text="▶ Auto-Run")
+                    if deadlock:
+                        self._log("⚠ Deadlock detected! Auto-run stopped.")
+                    else:
+                        self._log("⏹ Simulation completed")
+                    return
+                
+                # Schedule next step
+                try:
+                    speed = int(self.speed_entry.get())
+                    if speed < 100:
+                        speed = 100
+                except ValueError:
+                    speed = 500
+                
+                self.autorun_job = self.after(speed, self._auto_step)
+            else:
+                self._log(f"✗ Auto-step failed: {response.get('message', 'Unknown')}")
+                self.autorun_active = False
+                self.autorun_btn.config(text="▶ Auto-Run")
+        except Exception as e:
+            self._log(f"✗ Auto-step error: {e}")
+            self.autorun_active = False
+            self.autorun_btn.config(text="▶ Auto-Run")

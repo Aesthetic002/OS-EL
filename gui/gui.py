@@ -126,13 +126,14 @@ class DeadlockGUI:
                 font=FONTS['header_large'], bg=COLORS['primary'],
                 fg=COLORS['text_white']).pack(side='left', padx=20, pady=15)
         
-        # Main content area with three columns
-        main_frame = tk.Frame(self.root, bg=COLORS['bg_primary'])
-        main_frame.pack(fill='both', expand=True, padx=5, pady=5)
+        # Main content area with PanedWindow for flexible resizing
+        main_paned = tk.PanedWindow(self.root, orient='horizontal', 
+                                    sashrelief='raised', sashwidth=8,
+                                    bg=COLORS['bg_primary'])
+        main_paned.pack(fill='both', expand=True, padx=5, pady=5)
         
         # Left column: RAG Visualizer (largest)
-        left_frame = tk.Frame(main_frame, bg=COLORS['bg_primary'])
-        left_frame.pack(side='left', fill='both', expand=True, padx=5)
+        left_frame = tk.Frame(main_paned, bg=COLORS['bg_primary'])
         
         vis_label = tk.Label(left_frame, text="Resource Allocation Graph",
                             font=FONTS['header'], bg=COLORS['bg_primary'],
@@ -142,30 +143,45 @@ class DeadlockGUI:
         self.visualizer = RAGVisualizer(left_frame, self.backend)
         self.visualizer.pack(fill='both', expand=True)
         
-        # Middle column: Control Panel and Deadlock Panel
-        middle_frame = tk.Frame(main_frame, bg=COLORS['bg_primary'], width=400)
-        middle_frame.pack(side='left', fill='both', padx=5)
-        middle_frame.pack_propagate(False)
+        main_paned.add(left_frame, minsize=300, stretch='always')
         
-        # Control panel (top half)
-        control_label = tk.Label(middle_frame, text="Control Panel",
+        # Right paned window for control/deadlock and simulation
+        right_paned = tk.PanedWindow(main_paned, orient='horizontal',
+                                     sashrelief='raised', sashwidth=8,
+                                     bg=COLORS['bg_primary'])
+        
+        # Middle column: Control Panel and Deadlock Panel (in vertical pane)
+        middle_frame = tk.Frame(right_paned, bg=COLORS['bg_primary'])
+        
+        # Create vertical paned window for control and deadlock panels
+        middle_paned = tk.PanedWindow(middle_frame, orient='vertical',
+                                      sashrelief='raised', sashwidth=5,
+                                      bg=COLORS['bg_primary'])
+        middle_paned.pack(fill='both', expand=True)
+        
+        # Control panel (top)
+        control_container = tk.Frame(middle_paned, bg=COLORS['bg_primary'])
+        control_label = tk.Label(control_container, text="Control Panel",
                                 font=FONTS['header'], bg=COLORS['bg_primary'],
                                 fg=COLORS['text_primary'])
         control_label.pack(anchor='w', padx=5, pady=5)
         
-        self.control_panel = ControlPanel(middle_frame, self.backend,
+        self.control_panel = ControlPanel(control_container, self.backend,
                                          on_update=self.refresh_all)
         self.control_panel.pack(fill='both', expand=True)
+        middle_paned.add(control_container, minsize=150, stretch='always')
         
-        # Deadlock panel (bottom half)
-        self.deadlock_panel = DeadlockPanel(middle_frame, self.backend,
+        # Deadlock panel (bottom)
+        deadlock_container = tk.Frame(middle_paned, bg=COLORS['bg_primary'])
+        self.deadlock_panel = DeadlockPanel(deadlock_container, self.backend,
                                            on_update=self.refresh_all)
-        self.deadlock_panel.pack(fill='both', expand=True, pady=(10, 0))
+        self.deadlock_panel.pack(fill='both', expand=True)
+        middle_paned.add(deadlock_container, minsize=100, stretch='always')
+        
+        right_paned.add(middle_frame, minsize=300, stretch='always')
         
         # Right column: Simulation Panel
-        right_frame = tk.Frame(main_frame, bg=COLORS['bg_primary'], width=400)
-        right_frame.pack(side='left', fill='both', padx=5)
-        right_frame.pack_propagate(False)
+        right_frame = tk.Frame(right_paned, bg=COLORS['bg_primary'])
         
         sim_label = tk.Label(right_frame, text="Simulation",
                             font=FONTS['header'], bg=COLORS['bg_primary'],
@@ -175,6 +191,10 @@ class DeadlockGUI:
         self.simulation_panel = SimulationPanel(right_frame, self.backend,
                                                on_update=self.refresh_all)
         self.simulation_panel.pack(fill='both', expand=True)
+        
+        right_paned.add(right_frame, minsize=350, stretch='always')
+        
+        main_paned.add(right_paned, minsize=700, stretch='always')
         
         # Status bar
         status_bar = tk.Frame(self.root, bg=COLORS['bg_secondary'], height=25)

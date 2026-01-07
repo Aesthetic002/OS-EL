@@ -755,6 +755,8 @@ bool api_execute(APIContext *ctx, const APIRequest *request, APIResponse *respon
             
         case CMD_SIM_LOAD_SCENARIO:
             if (simulation_load_scenario(&ctx->simulation, (SimulationScenario)request->scenario)) {
+                /* Copy simulation RAG to main RAG so visualizer can display it */
+                rag_copy(&ctx->rag, &ctx->simulation.rag);
                 api_success_response(response, "Scenario loaded");
                 response->data_length = api_simulation_state_to_json(&ctx->simulation,
                                                                       response->data,
@@ -791,6 +793,8 @@ bool api_execute(APIContext *ctx, const APIRequest *request, APIResponse *respon
             config.auto_recover = request->auto_recover;
             
             bool continued = simulation_tick(&ctx->simulation, &config);
+            /* Sync simulation RAG to main RAG for visualizer */
+            rag_copy(&ctx->rag, &ctx->simulation.rag);
             api_success_response(response, continued ? "Tick executed" : "Simulation ended");
             response->data_length = api_simulation_state_to_json(&ctx->simulation,
                                                                   response->data,
