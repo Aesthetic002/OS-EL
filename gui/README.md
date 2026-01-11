@@ -1,16 +1,18 @@
-# OS-EL GUI
+# OS-EL GUI (PyQt6)
 
-Python GUI for the OS-EL Deadlock Detection & Recovery System.
+Modern Python GUI for the OS-EL Deadlock Detection & Recovery System.
 
 ## Requirements
 
-- Python 3.6 or higher
-- Tkinter (usually included with Python)
+- Python 3.8 or higher
+- PyQt6
 - Built backend (`bin/deadlock.exe`)
 
 ## Installation
 
-No additional installation required! All dependencies are Python built-ins.
+```powershell
+pip install PyQt6
+```
 
 ## Running the GUI
 
@@ -21,32 +23,39 @@ No additional installation required! All dependencies are Python built-ins.
 
 2. Run the GUI:
    ```powershell
-   python gui\gui.py
+   python gui\gui_qt.py
    ```
 
    Or from the gui directory:
    ```powershell
    cd gui
-   python gui.py
+   python gui_qt.py
    ```
 
 ## Features
 
+### Modern Dark Theme
+- Sleek dark color palette with indigo/purple accents
+- Smooth animations and glow effects
+- Responsive layout with resizable panels
+
 ### Resource Allocation Graph Visualizer
-- Interactive visual representation of processes and resources
+- QGraphicsView-based interactive visualization
+- Gradient-filled nodes with glow effects
 - Multiple layout algorithms (force-directed, circular, hierarchical)
 - Real-time updates when operations are performed
-- Visual highlighting of deadlocked processes/resources
+- Visual highlighting of deadlocked processes/resources (red glow)
 - Draggable nodes for custom layouts
+- Zoom and pan support
 
 ### Control Panel
-- **Process Management**: Add, remove, and list processes
-- **Resource Management**: Add, remove, and list resources
-- **Edge Operations**: Request, allocate, and release resources
+- **Processes Tab**: Add, remove, and list processes with priority
+- **Resources Tab**: Add, remove, and list resources with instance counts
+- **Edge Operations Tab**: Request, allocate, and release resources
 
 ### Deadlock Detection & Recovery
 - One-click deadlock detection
-- Visual status indicators
+- Visual status indicators (green/red)
 - Multiple recovery strategies:
   - Terminate All
   - Terminate Lowest Priority
@@ -61,16 +70,17 @@ No additional installation required! All dependencies are Python built-ins.
 - **Circular Wait**: Configurable n-process circular wait
 - **Dining Philosophers**: Classic synchronization problem
 - **Random Scenario**: Randomly generated deadlock scenarios
-- Event logging system
+- Event logging with timestamps
 - Auto-detect and auto-recover options
+- Auto-run with adjustable speed slider
 
 ## Usage Tips
 
 1. **Start Simple**: Begin with the "Simple Deadlock" scenario to understand the basics
 2. **Visualize**: Use the RAG visualizer to see the state of the system
 3. **Experiment**: Try different recovery strategies to see their effects
-4. **Step Through**: Use "Single Tick" in simulations to observe step-by-step execution
-5. **Refresh**: Click "Refresh" buttons to update visualizations after changes
+4. **Step Through**: Use "Tick" in simulations to observe step-by-step execution
+5. **Auto-Run**: Use the speed slider and Auto-Run for continuous simulation
 
 ## Troubleshooting
 
@@ -79,25 +89,25 @@ No additional installation required! All dependencies are Python built-ins.
 - Check that `bin/deadlock.exe` exists
 - Try rebuilding: `mingw32-make clean` then `mingw32-make`
 
-### Tkinter Not Found
-- Windows: Reinstall Python with "tcl/tk and IDLE" option
-- Linux: `sudo apt-get install python3-tk`
-- Mac: Usually pre-installed
+### PyQt6 Installation Issues
+- Update pip: `pip install --upgrade pip`
+- Install PyQt6: `pip install PyQt6`
+- On some systems: `pip install PyQt6-Qt6`
 
 ## Architecture
 
 ```
 gui/
-├── gui.py                 # Main application
-├── backend_interface.py   # JSON API communication
+├── gui_qt.py                  # Main PyQt6 application
+├── backend_interface.py       # JSON API communication
 ├── components/
-│   ├── rag_visualizer.py  # RAG visualization
-│   ├── control_panel.py   # Process/resource controls
-│   ├── deadlock_panel.py  # Detection and recovery
-│   └── simulation_panel.py # Simulation scenarios
+│   ├── rag_visualizer_qt.py   # QGraphicsView RAG visualization
+│   ├── control_panel_qt.py    # Process/resource controls
+│   ├── deadlock_panel_qt.py   # Detection and recovery
+│   └── simulation_panel_qt.py # Simulation scenarios
 └── utils/
-    ├── theme.py           # UI theming
-    └── graph_layout.py    # Layout algorithms
+    ├── theme_qt.py            # Dark theme styling
+    └── graph_layout.py        # Layout algorithms
 ```
 
 ## License

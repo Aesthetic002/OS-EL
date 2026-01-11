@@ -47,12 +47,13 @@ Run CLI:
 
 Run GUI:
 ```powershell
-python gui\gui.py
+pip install PyQt6
+python gui\gui_qt.py
 ```
 
 ## GUI Features
 
-The project includes a comprehensive Tkinter-based GUI with:
+The project includes a modern PyQt6-based GUI with:
 
 - **Visual RAG Display**: Interactive graph visualization with multiple layout algorithms
 - **Process/Resource Management**: Easy-to-use controls for managing system entities
@@ -72,7 +73,8 @@ See [gui/README.md](gui/README.md) for detailed GUI documentation.
 
 2. Run the GUI:
    ```powershell
-   python gui\gui.py
+   pip install PyQt6
+   python gui\gui_qt.py
    ```
 
 3. Try the "Simple Deadlock" scenario from the Simulation panel

@@ -370,7 +370,6 @@ bool detect_cycle_in_wait_for(int wait_for_matrix[MAX_PROCESSES][MAX_PROCESSES],
     
     *cycle_length = 0;
     
-    /* DFS for cycle detection in wait-for graph */
     for (int start = 0; start < process_count; start++) {
         if (colors[start] != COLOR_WHITE) continue;
         

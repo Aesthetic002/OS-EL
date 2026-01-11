@@ -1,8 +1,3 @@
-/**
- * @file main.c
- * @brief CLI for OS-EL Deadlock Detection & Recovery Module
- */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -24,12 +19,12 @@ static void print_header(void) {
 
 static void print_menu(void) {
     printf("\n--- Menu ---\n\n");
-    printf("Process:   1.Add  2.Remove  3.List\n");
-    printf("Resource:  4.Add  5.Remove  6.List\n");
-    printf("Edges:     7.Request  8.Allocate  9.Release\n");
-    printf("Deadlock:  10.Detect  11.Recover  12.ShowRAG\n");
-    printf("Demo:      13.Simple  14.Circular  15.Philosophers  16.Random\n");
-    printf("Other:     17.API  18.Reset  0.Exit\n\n");
+    printf("Process:   1.Add      2.Remove     3.List\n");
+    printf("Resource:  4.Add      5.Remove     6.List\n");
+    printf("Edges:     7.Request  8.Allocate   9.Release\n");
+    printf("Deadlock:  10.Detect  11.Recover   12.ShowRAG\n");
+    printf("Demo:      13.Simple  14.Circular  15.Philosophers\n");
+    printf("Other:     16.API     17.Reset     0.Exit\n\n");
     printf("Choice: ");
 }
 

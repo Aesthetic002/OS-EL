@@ -1,10 +1,2 @@
-# OS-EL GUI Requirements
-
-# Python 3.6+ required
-# All dependencies are built-in with Python standard library
-
-# Tkinter (built-in with most Python installations)
-# If tkinter is not installed:
-# - Windows: Included with Python installer
-# - Linux: sudo apt-get install python3-tk
-# - Mac: Included with Python
+# PyQt6 GUI Dependencies
+PyQt6>=6.4.0
