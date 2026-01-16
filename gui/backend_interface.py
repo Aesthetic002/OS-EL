@@ -25,10 +25,15 @@ class BackendInterface:
                            If None, will look in ../bin/deadlock.exe
         """
         if executable_path is None:
-            # Default to bin/deadlock.exe relative to project root
-            script_dir = os.path.dirname(os.path.abspath(__file__))
-            project_root = os.path.dirname(script_dir)
-            executable_path = os.path.join(project_root, 'bin', 'deadlock.exe')
+            if getattr(sys, 'frozen', False):
+                # We are running in a bundle
+                base_path = sys._MEIPASS
+                executable_path = os.path.join(base_path, 'bin', 'deadlock.exe')
+            else:
+                # Default to bin/deadlock.exe relative to project root
+                script_dir = os.path.dirname(os.path.abspath(__file__))
+                project_root = os.path.dirname(script_dir)
+                executable_path = os.path.join(project_root, 'bin', 'deadlock.exe')
         
         self.executable_path = executable_path
         self.process = None

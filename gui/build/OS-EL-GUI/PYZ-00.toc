@@ -1,0 +1,567 @@
+('C:\\Ganesh\\Projects\\OS-EL\\gui\\build\\OS-EL-GUI\\PYZ-00.pyz',
+ [('PyQt6',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\site-packages\\PyQt6\\__init__.py',
+   'PYMODULE'),
+  ('__future__',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\__future__.py',
+   'PYMODULE'),
+  ('_ast_unparse',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\_ast_unparse.py',
+   'PYMODULE'),
+  ('_colorize',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\_colorize.py',
+   'PYMODULE'),
+  ('_compat_pickle',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\_compat_pickle.py',
+   'PYMODULE'),
+  ('_opcode_metadata',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\_opcode_metadata.py',
+   'PYMODULE'),
+  ('_py_abc',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\_py_abc.py',
+   'PYMODULE'),
+  ('_py_warnings',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\_py_warnings.py',
+   'PYMODULE'),
+  ('_pydatetime',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\_pydatetime.py',
+   'PYMODULE'),
+  ('_pydecimal',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\_pydecimal.py',
+   'PYMODULE'),
+  ('_pyi_rth_utils',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\site-packages\\PyInstaller\\fake-modules\\_pyi_rth_utils\\__init__.py',
+   'PYMODULE'),
+  ('_pyi_rth_utils.qt',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\site-packages\\PyInstaller\\fake-modules\\_pyi_rth_utils\\qt.py',
+   'PYMODULE'),
+  ('_strptime',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\_strptime.py',
+   'PYMODULE'),
+  ('_threading_local',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\_threading_local.py',
+   'PYMODULE'),
+  ('annotationlib',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\annotationlib.py',
+   'PYMODULE'),
+  ('argparse',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\argparse.py',
+   'PYMODULE'),
+  ('ast',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\ast.py',
+   'PYMODULE'),
+  ('backend_interface',
+   'C:\\Ganesh\\Projects\\OS-EL\\gui\\backend_interface.py',
+   'PYMODULE'),
+  ('base64',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\base64.py',
+   'PYMODULE'),
+  ('bisect',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\bisect.py',
+   'PYMODULE'),
+  ('bz2',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\bz2.py',
+   'PYMODULE'),
+  ('calendar',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\calendar.py',
+   'PYMODULE'),
+  ('codeop',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\codeop.py',
+   'PYMODULE'),
+  ('components',
+   'C:\\Ganesh\\Projects\\OS-EL\\gui\\components\\__init__.py',
+   'PYMODULE'),
+  ('components.control_panel_qt',
+   'C:\\Ganesh\\Projects\\OS-EL\\gui\\components\\control_panel_qt.py',
+   'PYMODULE'),
+  ('components.deadlock_panel_qt',
+   'C:\\Ganesh\\Projects\\OS-EL\\gui\\components\\deadlock_panel_qt.py',
+   'PYMODULE'),
+  ('components.rag_visualizer_qt',
+   'C:\\Ganesh\\Projects\\OS-EL\\gui\\components\\rag_visualizer_qt.py',
+   'PYMODULE'),
+  ('compression',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\compression\\__init__.py',
+   'PYMODULE'),
+  ('compression._common',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\compression\\_common\\__init__.py',
+   'PYMODULE'),
+  ('compression._common._streams',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\compression\\_common\\_streams.py',
+   'PYMODULE'),
+  ('compression.zstd',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\compression\\zstd\\__init__.py',
+   'PYMODULE'),
+  ('compression.zstd._zstdfile',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\compression\\zstd\\_zstdfile.py',
+   'PYMODULE'),
+  ('contextlib',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\contextlib.py',
+   'PYMODULE'),
+  ('contextvars',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\contextvars.py',
+   'PYMODULE'),
+  ('copy',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\copy.py',
+   'PYMODULE'),
+  ('csv',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\csv.py',
+   'PYMODULE'),
+  ('dataclasses',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\dataclasses.py',
+   'PYMODULE'),
+  ('datetime',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\datetime.py',
+   'PYMODULE'),
+  ('decimal',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\decimal.py',
+   'PYMODULE'),
+  ('difflib',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\difflib.py',
+   'PYMODULE'),
+  ('dis',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\dis.py',
+   'PYMODULE'),
+  ('email',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\email\\__init__.py',
+   'PYMODULE'),
+  ('email._encoded_words',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\email\\_encoded_words.py',
+   'PYMODULE'),
+  ('email._header_value_parser',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\email\\_header_value_parser.py',
+   'PYMODULE'),
+  ('email._parseaddr',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\email\\_parseaddr.py',
+   'PYMODULE'),
+  ('email._policybase',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\email\\_policybase.py',
+   'PYMODULE'),
+  ('email.base64mime',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\email\\base64mime.py',
+   'PYMODULE'),
+  ('email.charset',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\email\\charset.py',
+   'PYMODULE'),
+  ('email.contentmanager',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\email\\contentmanager.py',
+   'PYMODULE'),
+  ('email.encoders',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\email\\encoders.py',
+   'PYMODULE'),
+  ('email.errors',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\email\\errors.py',
+   'PYMODULE'),
+  ('email.feedparser',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\email\\feedparser.py',
+   'PYMODULE'),
+  ('email.generator',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\email\\generator.py',
+   'PYMODULE'),
+  ('email.header',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\email\\header.py',
+   'PYMODULE'),
+  ('email.headerregistry',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\email\\headerregistry.py',
+   'PYMODULE'),
+  ('email.iterators',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\email\\iterators.py',
+   'PYMODULE'),
+  ('email.message',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\email\\message.py',
+   'PYMODULE'),
+  ('email.parser',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\email\\parser.py',
+   'PYMODULE'),
+  ('email.policy',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\email\\policy.py',
+   'PYMODULE'),
+  ('email.quoprimime',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\email\\quoprimime.py',
+   'PYMODULE'),
+  ('email.utils',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\email\\utils.py',
+   'PYMODULE'),
+  ('fnmatch',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\fnmatch.py',
+   'PYMODULE'),
+  ('fractions',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\fractions.py',
+   'PYMODULE'),
+  ('ftplib',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\ftplib.py',
+   'PYMODULE'),
+  ('getopt',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\getopt.py',
+   'PYMODULE'),
+  ('gettext',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\gettext.py',
+   'PYMODULE'),
+  ('glob',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\glob.py',
+   'PYMODULE'),
+  ('gzip',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\gzip.py',
+   'PYMODULE'),
+  ('hashlib',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\hashlib.py',
+   'PYMODULE'),
+  ('http',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\http\\__init__.py',
+   'PYMODULE'),
+  ('http.client',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\http\\client.py',
+   'PYMODULE'),
+  ('http.cookiejar',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\http\\cookiejar.py',
+   'PYMODULE'),
+  ('importlib',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\importlib\\__init__.py',
+   'PYMODULE'),
+  ('importlib._abc',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\importlib\\_abc.py',
+   'PYMODULE'),
+  ('importlib._bootstrap',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\importlib\\_bootstrap.py',
+   'PYMODULE'),
+  ('importlib._bootstrap_external',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\importlib\\_bootstrap_external.py',
+   'PYMODULE'),
+  ('importlib.abc',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\importlib\\abc.py',
+   'PYMODULE'),
+  ('importlib.machinery',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\importlib\\machinery.py',
+   'PYMODULE'),
+  ('importlib.metadata',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\importlib\\metadata\\__init__.py',
+   'PYMODULE'),
+  ('importlib.metadata._adapters',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\importlib\\metadata\\_adapters.py',
+   'PYMODULE'),
+  ('importlib.metadata._collections',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\importlib\\metadata\\_collections.py',
+   'PYMODULE'),
+  ('importlib.metadata._functools',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\importlib\\metadata\\_functools.py',
+   'PYMODULE'),
+  ('importlib.metadata._itertools',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\importlib\\metadata\\_itertools.py',
+   'PYMODULE'),
+  ('importlib.metadata._meta',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\importlib\\metadata\\_meta.py',
+   'PYMODULE'),
+  ('importlib.metadata._text',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\importlib\\metadata\\_text.py',
+   'PYMODULE'),
+  ('importlib.readers',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\importlib\\readers.py',
+   'PYMODULE'),
+  ('importlib.resources',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\importlib\\resources\\__init__.py',
+   'PYMODULE'),
+  ('importlib.resources._adapters',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\importlib\\resources\\_adapters.py',
+   'PYMODULE'),
+  ('importlib.resources._common',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\importlib\\resources\\_common.py',
+   'PYMODULE'),
+  ('importlib.resources._functional',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\importlib\\resources\\_functional.py',
+   'PYMODULE'),
+  ('importlib.resources._itertools',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\importlib\\resources\\_itertools.py',
+   'PYMODULE'),
+  ('importlib.resources.abc',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\importlib\\resources\\abc.py',
+   'PYMODULE'),
+  ('importlib.resources.readers',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\importlib\\resources\\readers.py',
+   'PYMODULE'),
+  ('importlib.util',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\importlib\\util.py',
+   'PYMODULE'),
+  ('inspect',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\inspect.py',
+   'PYMODULE'),
+  ('ipaddress',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\ipaddress.py',
+   'PYMODULE'),
+  ('json',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\json\\__init__.py',
+   'PYMODULE'),
+  ('json.decoder',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\json\\decoder.py',
+   'PYMODULE'),
+  ('json.encoder',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\json\\encoder.py',
+   'PYMODULE'),
+  ('json.scanner',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\json\\scanner.py',
+   'PYMODULE'),
+  ('logging',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\logging\\__init__.py',
+   'PYMODULE'),
+  ('lzma',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\lzma.py',
+   'PYMODULE'),
+  ('mimetypes',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\mimetypes.py',
+   'PYMODULE'),
+  ('netrc',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\netrc.py',
+   'PYMODULE'),
+  ('numbers',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\numbers.py',
+   'PYMODULE'),
+  ('opcode',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\opcode.py',
+   'PYMODULE'),
+  ('pathlib',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\pathlib\\__init__.py',
+   'PYMODULE'),
+  ('pathlib._os',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\pathlib\\_os.py',
+   'PYMODULE'),
+  ('pickle',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\pickle.py',
+   'PYMODULE'),
+  ('pkgutil',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\pkgutil.py',
+   'PYMODULE'),
+  ('pprint',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\pprint.py',
+   'PYMODULE'),
+  ('py_compile',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\py_compile.py',
+   'PYMODULE'),
+  ('queue',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\queue.py',
+   'PYMODULE'),
+  ('quopri',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\quopri.py',
+   'PYMODULE'),
+  ('random',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\random.py',
+   'PYMODULE'),
+  ('selectors',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\selectors.py',
+   'PYMODULE'),
+  ('shutil',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\shutil.py',
+   'PYMODULE'),
+  ('signal',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\signal.py',
+   'PYMODULE'),
+  ('socket',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\socket.py',
+   'PYMODULE'),
+  ('ssl',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\ssl.py',
+   'PYMODULE'),
+  ('statistics',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\statistics.py',
+   'PYMODULE'),
+  ('string',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\string\\__init__.py',
+   'PYMODULE'),
+  ('stringprep',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\stringprep.py',
+   'PYMODULE'),
+  ('subprocess',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\subprocess.py',
+   'PYMODULE'),
+  ('tarfile',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\tarfile.py',
+   'PYMODULE'),
+  ('tempfile',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\tempfile.py',
+   'PYMODULE'),
+  ('textwrap',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\textwrap.py',
+   'PYMODULE'),
+  ('threading',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\threading.py',
+   'PYMODULE'),
+  ('token',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\token.py',
+   'PYMODULE'),
+  ('tokenize',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\tokenize.py',
+   'PYMODULE'),
+  ('tracemalloc',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\tracemalloc.py',
+   'PYMODULE'),
+  ('typing',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\typing.py',
+   'PYMODULE'),
+  ('urllib',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\urllib\\__init__.py',
+   'PYMODULE'),
+  ('urllib.error',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\urllib\\error.py',
+   'PYMODULE'),
+  ('urllib.parse',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\urllib\\parse.py',
+   'PYMODULE'),
+  ('urllib.request',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\urllib\\request.py',
+   'PYMODULE'),
+  ('urllib.response',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\urllib\\response.py',
+   'PYMODULE'),
+  ('utils', 'C:\\Ganesh\\Projects\\OS-EL\\gui\\utils\\__init__.py', 'PYMODULE'),
+  ('utils.graph_layout',
+   'C:\\Ganesh\\Projects\\OS-EL\\gui\\utils\\graph_layout.py',
+   'PYMODULE'),
+  ('utils.theme_qt',
+   'C:\\Ganesh\\Projects\\OS-EL\\gui\\utils\\theme_qt.py',
+   'PYMODULE'),
+  ('zipfile',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\zipfile\\__init__.py',
+   'PYMODULE'),
+  ('zipfile._path',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\zipfile\\_path\\__init__.py',
+   'PYMODULE'),
+  ('zipfile._path.glob',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\zipfile\\_path\\glob.py',
+   'PYMODULE'),
+  ('zipimport',
+   'C:\\Users\\Lolakshi '
+   'M\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\zipimport.py',
+   'PYMODULE')])
