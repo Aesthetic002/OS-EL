@@ -25,15 +25,18 @@ class BackendInterface:
                            If None, will look in ../bin/deadlock.exe
         """
         if executable_path is None:
+            # Choose platform-appropriate backend executable name
+            exe_name = 'deadlock.exe' if os.name == 'nt' else 'deadlock'
+
             if getattr(sys, 'frozen', False):
                 # We are running in a bundle
                 base_path = sys._MEIPASS
-                executable_path = os.path.join(base_path, 'bin', 'deadlock.exe')
+                executable_path = os.path.join(base_path, 'bin', exe_name)
             else:
-                # Default to bin/deadlock.exe relative to project root
+                # Default to bin/deadlock (or deadlock.exe on Windows) relative to project root
                 script_dir = os.path.dirname(os.path.abspath(__file__))
                 project_root = os.path.dirname(script_dir)
-                executable_path = os.path.join(project_root, 'bin', 'deadlock.exe')
+                executable_path = os.path.join(project_root, 'bin', exe_name)
         
         self.executable_path = executable_path
         self.process = None
