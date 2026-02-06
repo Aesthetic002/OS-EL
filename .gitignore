@@ -1,2 +1,25 @@
-DEADLOCK_THEORY_QA.md
-PRESENTATION_GUIDE.md
+# Build Artifacts
+bin/
+obj/
+*.exe
+*.o
+*.a
+*.dll
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
